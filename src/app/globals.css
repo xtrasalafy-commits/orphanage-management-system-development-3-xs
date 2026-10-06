@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-pine-50: #eef6f1;
+  --color-pine-100: #d7ebe0;
+  --color-pine-200: #b1d7c5;
+  --color-pine-300: #83bca4;
+  --color-pine-400: #549d83;
+  --color-pine-500: #36806a;
+  --color-pine-600: #276755;
+  --color-pine-700: #1e5346;
+  --color-pine-800: #164239;
+  --color-pine-900: #0d352c;
+  --color-pine-950: #06211b;
+
+  --color-cream: #f7f5ef;
+  --color-sand: #ebe7dc;
+
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -400px 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-pine-200);
+  color: var(--color-pine-950);
+}
+
+/* Refined scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-pine-800) 30%, transparent) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-pine-800) 25%, transparent);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Hide number input spinners for cleaner form design */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Date picker indicator alignment */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.skeleton-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-pine-950) 6%, transparent),
+    transparent
+  );
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  animation: var(--animate-shimmer);
+}
