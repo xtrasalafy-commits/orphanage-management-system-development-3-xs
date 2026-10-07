@@ -6,7 +6,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --env-file=.env --import tsx ./src/db/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:reconcile": "node --env-file=.env --import tsx ./src/db/reconcile-migrations.ts",
+    "db:seed": "node --env-file=.env --import tsx ./src/db/seed.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

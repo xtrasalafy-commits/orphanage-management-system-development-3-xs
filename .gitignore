@@ -1,0 +1,14 @@
+node_modules
+
+# Environment variables (contains DATABASE_URL secrets)
+.env
+.env.*
+!.env.example
+
+# Next.js build output
+.next
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Vercel
+.vercel

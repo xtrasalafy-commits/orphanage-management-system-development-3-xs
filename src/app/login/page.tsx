@@ -33,11 +33,25 @@ export default async function LoginPage() {
 
       {/* Right — hero imagery */}
       <section className="relative hidden overflow-hidden lg:block">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/login-hero.jpg"
-          alt="Ilustrasi anak-anak bermain di halaman panti asuhan saat senja"
-          className="absolute inset-0 h-full w-full object-cover"
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-br from-pine-800 via-pine-950 to-stone-950"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(900px 460px at 15% -5%, rgba(131,188,164,0.28), transparent 60%), radial-gradient(720px 620px at 105% 100%, rgba(251,191,36,0.14), transparent 60%), radial-gradient(560px 420px at 80% 25%, rgba(84,157,131,0.18), transparent 65%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0 1px, transparent 1px 12px)",
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pine-950/85 via-pine-950/25 to-pine-950/35" />
         <div className="absolute inset-x-0 bottom-0 p-12 xl:p-16">
