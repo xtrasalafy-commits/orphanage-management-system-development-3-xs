@@ -39,6 +39,25 @@ Buka http://localhost:3000 lalu masuk dengan akun demo:
 | `npm run db:migrate` | Terapkan migration ke database                           |
 | `npm run db:seed`    | Isi ulang database dengan data contoh                    |
 | `npm run db:reconcile`| Catat migration yang sudah diterapkan manual            |
+| `npm run pack:source` | Packing ulang `public/source-code.zip`                  |
+
+## Widget Trakteer & Download Source Code
+
+Aplikasi ini dilengkapi **floating widget Trakteer** di sudut kanan bawah layar
+(`src/components/widgets/trakteer-widget.tsx`) dengan tulisan
+_"Web app ini gratis & bebas iklan. Kopi kecil, server tetap jalan."_
+
+Ketika diklik, widget membuka panel di dalam aplikasi (tanpa pindah halaman) yang berisi:
+
+- **Pilihan nominal traktiran** mulai dari Rp 6.000 dan kelipatannya
+  (Rp 6.000 / 12.000 / 18.000 / 24.000 / 36.000 / 50.000 / 100.000 / 200.000).
+- **QR Code** yang di-generate langsung di browser (library `qrcode`) menunjuk ke
+  https://trakteer.id/perpus_opera/ — cukup scan dengan kamera ponsel.
+- **Tombol "Buka Trakteer"** menuju halaman Trakteer.
+- **Tombol "Download Source"** untuk mengunduh kode sumber lengkap
+  (`public/source-code.zip`, di-generate otomatis oleh `npm run prebuild`
+  melalui `scripts/pack-source.mjs` — berjalan otomatis sebelum `next build`
+  di Vercel).
 
 ## Deploy ke Vercel
 
@@ -67,3 +86,12 @@ Buka http://localhost:3000 lalu masuk dengan akun demo:
 - Password disimpan dengan scrypt; sesi disimpan di tabel `sessions` dengan cookie
   httpOnly `panti_session`.
 - Gambar hero halaman login murni CSS (tanya aset gambar eksternal).
+
+## Lisensi
+
+**Open Source oleh MZF — 2026**
+
+Kode sumber lengkap aplikasi ini tersedia gratis dan dapat diunduh langsung dari
+aplikasi melalui tombol **Download Source** pada widget Trakteer, atau dari halaman
+releases repository ini. Bebas digunakan, dipelajari, dan dimodifikasi.
+

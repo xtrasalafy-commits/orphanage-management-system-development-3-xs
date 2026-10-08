@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "./providers";
+import { TrakteerWidget } from "@/components/widgets/trakteer-widget";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="id" className={`${jakarta.variable} ${fraunces.variable}`}>
       <body className="bg-cream font-sans text-stone-900 antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <TrakteerWidget />
+        </Providers>
       </body>
     </html>
   );

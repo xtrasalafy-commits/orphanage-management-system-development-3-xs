@@ -12,3 +12,6 @@ tsconfig.tsbuildinfo
 
 # Vercel
 .vercel
+
+# Generated source archive (built by scripts/pack-source.mjs)
+public/source-code.zip

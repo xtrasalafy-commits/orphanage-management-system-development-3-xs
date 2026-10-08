@@ -29,6 +29,9 @@ export default async function LoginPage() {
         <p className="relative pb-6 text-center text-xs text-stone-400">
           &copy; {new Date().getFullYear()} Yayasan Panti Asuhan Nur Kasih — Bantul, Yogyakarta
         </p>
+        <p className="relative pb-4 text-center text-[11px] font-medium text-stone-400">
+          Open Source oleh MZF — 2026
+        </p>
       </section>
 
       {/* Right — hero imagery */}
